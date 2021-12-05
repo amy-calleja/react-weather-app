@@ -21,7 +21,10 @@ export default function Weather() {
       <h2>Sydney</h2>
       <p>10th November 2021</p>
       <div class="temperatures-display">
-        <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" />
+        <img
+          src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+          alt="Partly Cloudy"
+        />
         <h1>20</h1>
         <span class="units">°C</span>
       </div>
