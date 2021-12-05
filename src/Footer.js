@@ -1,4 +1,5 @@
 import React from "react";
+import "./Footer.css";
 
 export default function Footer() {
   return (
@@ -10,7 +11,7 @@ export default function Footer() {
       >
         Open-source
       </a>
-      <p> React app created by Amy Calleja 👩‍💻</p>
+      <p>React app created by Amy Calleja 👩‍💻 </p>
     </div>
   );
 }
