@@ -31,7 +31,8 @@ h3 {
 
 h2,
 h3,
-p {
+p,
+a {
   text-align: center;
   display: block;
   color: grey;
