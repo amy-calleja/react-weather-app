@@ -1,0 +1,50 @@
+.col {
+  text-align: center;
+  padding: 2px;
+}
+
+.weather-forecast {
+  margin: 20px 20px;
+  color: whitesmoke;
+  text-align: center;
+}
+
+.weather-forecast-date {
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+.weather-forecast-temperature-max {
+  font-weight: 600;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 0.7;
+}
+
+img {
+  max-width: 120px;
+  display: inline;
+  position: relative;
+  top: -20px;
+  right: 10px;
+}
+
+.temperatures-display .units {
+  position: relative;
+  top: -34px;
+}
+
+.temperatures-display {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.units {
+  color: grey;
+}
+
+.humidityWind {
+  color: grey;
+  opacity: 0.9;
+}
