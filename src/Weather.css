@@ -22,12 +22,12 @@
   opacity: 0.7;
 }
 
-img {
+.Weather .AnimatedIcons {
   max-width: 120px;
   display: inline;
   position: relative;
-  top: -20px;
-  right: 10px;
+  top: 5px;
+  right: 12px;
 }
 
 .temperatures-display .units {

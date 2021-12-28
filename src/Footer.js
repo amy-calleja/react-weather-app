@@ -3,15 +3,14 @@ import "./Footer.css";
 
 export default function Footer() {
   return (
-    <div className="Footer">
+    <span className="Footer">
       <a
         href="https://github.com/amy-calleja/react-weather-app"
         target="_blank"
         rel="noopener noreferrer"
       >
-        Open-source
+        Open-source React app created by Amy Calleja 👩‍💻{" "}
       </a>
-      <p>React app created by Amy Calleja 👩‍💻 </p>
-    </div>
+    </span>
   );
 }

@@ -1,4 +1,8 @@
-p,
+.Footer {
+  font-size: 10px;
+  font-style: italic;
+}
+
 a {
-  text-align: center;
+  text-decoration-line: none;
 }
