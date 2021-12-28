@@ -15,8 +15,8 @@ h2 {
 }
 
 h3 {
-  font-size: 25px;
-  letter-spacing: 0.2em;
+  font-size: 20px;
+  letter-spacing: 0.15em;
   text-align: center;
   margin-bottom: 20px;
   text-transform: capitalize;
@@ -68,17 +68,18 @@ input {
   color: grey;
 }
 
-.card {
+.App .card {
   border-radius: 40px;
   border: none;
   filter: blur(0px);
   background-size: cover;
 }
 
-.container {
+.App .container {
   display: block;
+  border: solid 1px lightgrey;
   text-align: center;
-  max-width: 600px;
+  max-width: 350px;
   margin: 20px auto;
   padding: 30px auto;
   font-family: "Quicksand", sans-serif;

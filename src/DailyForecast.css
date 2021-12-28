@@ -1,0 +1,18 @@
+.DailyForecast {
+  text-align: center;
+  color: grey;
+  margin-bottom: 5px;
+}
+
+.DailyForecast-temp-min {
+  opacity: 0.6;
+  margin-left: 6px;
+}
+
+.DailyForecast-temps {
+  margin-top: 6px;
+}
+
+.DailyForecast-day {
+  margin-bottom: 3px;
+}

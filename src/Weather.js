@@ -12,6 +12,7 @@ export default function Weather(props) {
     setWeather({
       loaded: true,
       city: response.data.name,
+      coordinates: response.data.coord,
       date: new Date(response.data.dt * 1000),
       temperature: Math.round(response.data.main.temp),
       wind: Math.round(response.data.wind.speed),
@@ -56,7 +57,7 @@ export default function Weather(props) {
 
         <WeatherInfo info={weather} />
         <br />
-        <DailyForecast />
+        <DailyForecast coordinates={weather.coordinates} />
       </div>
     );
   } else {
