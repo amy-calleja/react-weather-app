@@ -47,5 +47,5 @@ export default function DailyForecast(props) {
   } else {
     searchForecast();
     return <Loader type="ThreeDots" color="#F2B68D" height={80} width={80} />;
-    }
+  }
 }

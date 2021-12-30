@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Weather.css";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
@@ -8,6 +8,8 @@ import Loader from "react-loader-spinner";
 export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
   const [weather, setWeather] = useState({ loaded: false });
+
+  useEffect(() => {}, [props.coordinates]);
 
   function displayWeather(response) {
     setWeather({
@@ -37,6 +39,23 @@ export default function Weather(props) {
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayWeather);
   }
+    
+  function getLocation() {
+    if ("geolocation" in navigator) {
+      console.log("Available");
+    } else {
+      console.log("Not Available");
+    }
+
+    navigator.geolocation.getCurrentPosition(function (position) {
+      let lat = position.coords.latitude;
+      let lon = position.coords.longitude;
+      let apiKey = "a407ed3203878dbbce2748fb72810f52";
+      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+
+      axios.get(apiUrl).then(displayWeather);
+    });
+  }
 
   if (weather.loaded) {
     return (
@@ -51,7 +70,11 @@ export default function Weather(props) {
           />{" "}
           <span />
           <input type="submit" value="Go" id="go" />
-          <button id="locationButton">
+          <button
+            id="locationButton"
+            coordinates={weather.coordinates}
+            onClick={getLocation}
+          >
             <i className="fas fa-thumbtack"></i>My Location
           </button>
         </form>

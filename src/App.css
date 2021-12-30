@@ -54,14 +54,14 @@ a {
 }
 
 input {
-  border: 1px solid white;
-  background: transparent;
-  border-radius: 10px;
+  border: none;
+  background: rgb(248, 246, 246, 0.3);
+  border-radius: 4px;
   padding: 10px;
   text-align: center;
   color: white;
 
-  outline: 1px white;
+  outline: none;
   text-transform: capitalize;
 }
 
@@ -81,11 +81,12 @@ input {
   border: none;
   text-align: center;
   max-width: 350px;
-  margin: 20px auto;
-  padding-bottom: 25px;
-  padding-left: 22px;
-  padding-right: 22px;
+  margin: 5px auto;
+  padding-bottom: 21px;
+  padding-left: 24px;
+  padding-right: 24px;
   font-family: "Quicksand", sans-serif;
   background-image: url(./background.png);
   background-size: cover;
+  border-radius: 4px;
 }

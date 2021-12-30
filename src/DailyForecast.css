@@ -2,6 +2,7 @@
   text-align: center;
   color: white;
   font-size: 15px;
+  margin-top: 14px;
 }
 
 .DailyForecast-temp-min {
@@ -10,11 +11,11 @@
 }
 
 .DailyForecast-temps {
-  margin-top: 12px;
+  margin-top: 14px;
 }
 
 .DailyForecast-day {
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .DailyForecast canvas {
