@@ -14,7 +14,7 @@ export default function WeatherInfo(props) {
       <div className="temperatures-display">
         <AnimatedIcons
           code={props.info.icon}
-          size={50}
+          size={55}
           alt={props.info.description}
         />
 

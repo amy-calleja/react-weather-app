@@ -4,8 +4,8 @@
 }
 
 .weather-forecast {
-  margin: 20px 20px;
-  color: whitesmoke;
+  margin: 30px 20px;
+  color: white;
   text-align: center;
 }
 
@@ -41,10 +41,10 @@
 }
 
 .units {
-  color: grey;
+  color: white;
 }
 
 .humidityWind {
-  color: grey;
+  color: white;
   opacity: 0.9;
 }
