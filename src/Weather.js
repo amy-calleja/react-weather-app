@@ -63,6 +63,6 @@ export default function Weather(props) {
     );
   } else {
     search();
-    return <Loader type="ThreeDots" color="#885EF1" height={80} width={80} />;
+    return <Loader type="ThreeDots" color="#F2B68D" height={80} width={80} />;
   }
 }
