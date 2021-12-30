@@ -23,7 +23,7 @@ h3 {
 }
 
 .search-bar {
-  padding: 30px 30px 30px 30px;
+  padding: 22px 5px 30px 5px;
   background-color: transparent;
   border-radius: 30px;
   border: none;
@@ -46,7 +46,7 @@ a {
   border: 1px;
   text-decoration: underline;
   color: white;
-  max-width: 190px;
+  max-width: 150px;
 }
 .App button:focus {
   border: none;
@@ -60,7 +60,7 @@ input {
   padding: 10px;
   text-align: center;
   color: white;
-
+  max-width: 148px;
   outline: none;
   text-transform: capitalize;
 }
@@ -82,6 +82,7 @@ input {
   text-align: center;
   max-width: 350px;
   margin: 5px auto;
+  margin-top: 2px;
   padding-bottom: 21px;
   padding-left: 24px;
   padding-right: 24px;

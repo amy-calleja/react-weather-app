@@ -39,14 +39,8 @@ export default function Weather(props) {
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayWeather);
   }
-    
-  function getLocation() {
-    if ("geolocation" in navigator) {
-      console.log("Available");
-    } else {
-      console.log("Not Available");
-    }
 
+  function getLocation() {
     navigator.geolocation.getCurrentPosition(function (position) {
       let lat = position.coords.latitude;
       let lon = position.coords.longitude;

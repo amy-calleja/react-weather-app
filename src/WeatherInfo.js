@@ -3,7 +3,6 @@ import FormattedDate from "./FormattedDate";
 import AnimatedIcons from "./AnimatedIcons";
 
 export default function WeatherInfo(props) {
-  console.log(props.info.date);
   return (
     <div className="WeatherInfo">
       <h2>{props.info.city}</h2>
