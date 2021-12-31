@@ -23,8 +23,12 @@ export default function WeatherInfo(props) {
       </div>
       <h3>{props.info.description}</h3>
       <div className="humidityWind">
-        <div>Humidity: {props.info.humidity}%</div>
-        <div>Wind: {props.info.wind}km/h</div>
+        <div>
+          <i class="fas fa-tint"></i> Humidity: {props.info.humidity}%
+        </div>
+        <div>
+          <i class="fas fa-wind"></i> Wind: {props.info.wind}km/h
+        </div>
       </div>
     </div>
   );

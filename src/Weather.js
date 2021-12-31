@@ -69,7 +69,7 @@ export default function Weather(props) {
             coordinates={weather.coordinates}
             onClick={getLocation}
           >
-            <i className="fas fa-thumbtack"></i>My Location
+            <i className="fas fa-thumbtack"></i> My Location
           </button>
         </form>
 
