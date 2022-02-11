@@ -9,7 +9,7 @@ export default function Footer() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        Open-source React app created by Amy Calleja 👩‍💻{" "}
+        Open-source React app created by Amy Calleja{" "}
       </a>
     </span>
   );
