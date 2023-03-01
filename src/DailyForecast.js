@@ -3,10 +3,13 @@ import React, { useEffect, useState } from "react";
 import "./DailyForecast.css";
 import DailyForecastDay from "./DailyForecastDay";
 import Loader from "react-loader-spinner";
+import PollutionForecast from "./PollutionForecast";
+import { Link } from "react-router-dom";
 
 export default function DailyForecast(props) {
   let [loaded, setLoaded] = useState(false);
   let [forecast, setForecast] = useState("");
+  let [pollution, setPollution] = useState({ loaded: false });
 
   useEffect(() => {
     setLoaded(false);
@@ -14,6 +17,7 @@ export default function DailyForecast(props) {
 
   function handleResponse(response) {
     setForecast(response.data.daily);
+    searchPollution();
     setLoaded(true);
   }
 
@@ -22,13 +26,32 @@ export default function DailyForecast(props) {
     let longitude = props.coordinates.lon;
     let apiKey = "a407ed3203878dbbce2748fb72810f52";
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude={part}&appid=${apiKey}&units=metric`;
-
     axios.get(apiUrl).then(handleResponse);
+  }
+
+  function handlePollution(response) {
+    setPollution({
+      loaded: true,
+      data: response.data,
+      aqi: response.data.list[0].main.aqi,
+      co: response.data.list[0].components.co,
+      no: response.data.list[0].components.no,
+      no2: response.data.list[0].components.no2
+    });
+  }
+
+  function searchPollution() {
+    let latitude = props.coordinates.lat;
+    let longitude = props.coordinates.lon;
+    let apiKey = "a407ed3203878dbbce2748fb72810f52";
+    let pollutionUrl = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
+    axios.get(pollutionUrl).then(handlePollution);
   }
 
   if (loaded) {
     return (
       <div className="DailyForecast">
+        <PollutionForecast pollution={pollution} />
         <div className="row">
           {forecast.map(function (forecast, index) {
             if (index < 5) {
@@ -42,6 +65,7 @@ export default function DailyForecast(props) {
             }
           })}
         </div>
+        <Link to="/pollution-forecast" className="mt-3" style={{fontSize: "12px"}}>See Pollution Overview</Link>
       </div>
     );
   } else {
