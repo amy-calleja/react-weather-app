@@ -5,15 +5,15 @@ let aqi = props.pollution.aqi;
 
 const showAqi = () => {
 if (aqi === 1) {
-    return <h3 style={{fontWeight: "bold", color: "#0EF700"}}>Good</h3>
+    return <h3 style={{fontWeight: "bold", color: "#9ff2b1"}}>Good</h3>
 } else if (aqi === 2) {
-        return <h3 style={{fontWeight: "bold", color: "#F7EE79"}}>Fair</h3>
+        return <h3 style={{fontWeight: "bold", color: "#f2ed8e"}}>Fair</h3>
     } else if (aqi === 3) {
-        return <h3 style={{fontWeight: "bold", color: "#F29D00"}}>Moderate</h3>
+        return <h3 style={{fontWeight: "bold", color: "#f2c58e"}}>Moderate</h3>
     } else if (aqi === 4) {
-        return <h3 style={{fontWeight: "bold", color: "#F74500"}}>Poor</h3>
+        return <h3 style={{fontWeight: "bold", color: "#e89c9b"}}>Poor</h3>
     } else if (aqi === 5) {
-        return <h3 style={{fontWeight: "bold", color: "#B4160E"}}>Very Poor</h3>
+        return <h3 style={{fontWeight: "bold", color: "#f29898"}}>Very Poor</h3>
     }
 }
 

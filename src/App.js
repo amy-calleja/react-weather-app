@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <div className="container">
+        <div className="container container-md">
           <Switch>
             <Route exact path="/"><WeatherPage /></Route>
             <Route exact path="/pollution-forecast"><AirPollutionPage /></Route>
