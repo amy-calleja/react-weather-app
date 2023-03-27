@@ -65,7 +65,7 @@ export default function DailyForecast(props) {
             }
           })}
         </div>
-        <Link to="/pollution-forecast" className="mt-3" style={{fontSize: "12px"}}>See Pollution Overview</Link>
+       {/* <Link to="/pollution-forecast" className="mt-3" style={{fontSize: "12px"}}>See Pollution Overview</Link>*/}
       </div>
     );
   } else {
