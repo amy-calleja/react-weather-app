@@ -1,9 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function AirPollutionPage(props) {
-
-console.log(props.location.state)
+  console.log(props.location.state)
   return (
     <div className="AirPollutionPage">
       <br />
@@ -12,5 +11,5 @@ console.log(props.location.state)
       <br />
       <Link to="/">Weather Forecast</Link>
     </div>
-  );
+  )
 }
