@@ -1,9 +1,15 @@
 .Footer {
   font-size: 10px;
   font-style: italic;
+  margin-top: 30px;
 }
 
 a {
   text-decoration-line: none;
-  color: grey;
+  color: white;
+}
+
+a:hover {
+  color: rgb(253, 206, 255);
+  transition: ease-in-out 400ms;
 }

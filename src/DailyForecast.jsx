@@ -7,12 +7,14 @@ import PollutionForecast from './PollutionForecast'
 import { Link } from 'react-router-dom'
 
 export default function DailyForecast(props) {
-  let [loaded, setLoaded] = useState(false)
-  let [forecast, setForecast] = useState('')
-  let [pollution, setPollution] = useState({ loaded: false })
+  const [loaded, setLoaded] = useState(false)
+  const [forecast, setForecast] = useState('')
+  const [pollution, setPollution] = useState({ loaded: false })
+  const [error, setError] = useState(null)
 
   useEffect(() => {
     setLoaded(false)
+    searchForecast()
   }, [props.coordinates])
 
   function handleResponse(response) {
@@ -22,14 +24,18 @@ export default function DailyForecast(props) {
   }
 
   function searchForecast() {
-    let latitude = props.coordinates.latitude
-    let longitude = props.coordinates.longitude
+    setError(null)
     let city = props.city
-    //let apiKey = 'a407ed3203878dbbce2748fb72810f52'
-    //let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude={part}&appid=${apiKey}&units=metric`
     let apiKey = '499f11ecbcdob7ab1a500t4761a0c233'
     let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`
-    axios.get(apiUrl).then(handleResponse)
+
+    axios
+      .get(apiUrl)
+      .then(handleResponse)
+      .catch((error) => {
+        setError('Error fetching data, please try again later.')
+        console.error('Error fetching forecast data:', error)
+      })
   }
 
   function handlePollution(response) {
@@ -48,13 +54,25 @@ export default function DailyForecast(props) {
     let longitude = props.coordinates.longitude
     let apiKey = 'a407ed3203878dbbce2748fb72810f52'
     let pollutionUrl = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${latitude}&lon=${longitude}&appid=${apiKey}`
-    axios.get(pollutionUrl).then(handlePollution)
+    axios
+      .get(pollutionUrl)
+      .then(handlePollution)
+      .catch((error) => {
+        console.error('Error fetching air quality data:', error)
+      })
   }
 
-  if (loaded) {
-    return (
-      <div className="DailyForecast">
-        <PollutionForecast pollution={pollution} />
+  if (!loaded && !error) {
+    return <Loader type="ThreeDots" color="#F2B68D" height={80} width={80} />
+  }
+
+  return (
+    <div className="DailyForecast">
+      <PollutionForecast pollution={pollution} />
+
+      {error ? (
+        <div style={{ color: 'white' }}>{error}</div>
+      ) : (
         <div className="row">
           {forecast.map(function (forecast, index) {
             if (index < 5) {
@@ -68,11 +86,9 @@ export default function DailyForecast(props) {
             }
           })}
         </div>
-        {/* <Link to="/pollution-forecast" className="mt-3" style={{fontSize: "12px"}}>See Pollution Overview</Link>*/}
-      </div>
-    )
-  } else {
-    searchForecast()
-    return <Loader type="ThreeDots" color="#F2B68D" height={80} width={80} />
-  }
+      )}
+
+      {/* <Link to="/pollution-forecast" className="mt-3" style={{fontSize: "12px"}}>See Pollution Overview</Link>*/}
+    </div>
+  )
 }
